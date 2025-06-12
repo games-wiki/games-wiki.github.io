@@ -32,7 +32,7 @@
         <tbody>
 
             <!-- <tr data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="<table><tr><td>5★</td><td>+0</td><td>+19%</td><td>+19%</td><td>+19%</td></tr><tr><td>5★</td><td>+1</td><td>+28%</td><td>+28%</td><td>+28%</td></tr><tr><td>5★</td><td>+2</td><td>+38%</td><td>+38%</td><td>+38%</td></tr><table>"> -->
-            <tr data-bs-toggle="tooltip" data-bs-html="true" data-bs-title="111 <table><tr><td>1</td><td>2</td></tr></table>">    
+            <tr data-bs-toggle="popover" data-bs-content="111 <table><tr><td>1</td><td>2</td></tr></table>">    
                 <td class="bg-blu-2">Венди</td>
                 <td>5★</td>
                 <td>+0</td>
@@ -119,6 +119,9 @@
     <script>
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
     </script>
     
 </body>
