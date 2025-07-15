@@ -22,13 +22,27 @@
     <script src="/static/bootstrap-5.3.7.js"></script>
     <script src="/static/chartist-0.11.4.js"></script>
     <script>
-        const data= {
+        const data = {
             labels:
                 ["100+151", "105+146", "110+141", "115+136", "120+131", "125+126", "130+121", "135+116", "140+111", "145+106", "150+101",],
             series:[
                 [/*100+151*/ 249, /*105+146*/ 245, /*110+141*/ 241, /*115+136*/ 238, /*120+131*/ 234, /*125+126*/ 232, /*130+121*/ 229, /*135+116*/ 226, /*140+111*/ null, /*145+106*/ null, /*150+101*/ null],
             ],
         };
+        const conf = {
+            low: 0,
+            fullWidth: true,
+            chartPadding: {
+                right: 40,
+            },
+            lineSmooth: Chartist.Interpolation.cardinal({
+                fillHoles: true,
+            }),
+            axisY: {
+                onlyInteger: true,
+            },
+        };
+        new Chartist.Line('#ct-chart-1', data, conf);
     </script>
 </body>
 </html>
