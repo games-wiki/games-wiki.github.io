@@ -37,7 +37,10 @@
             chartPadding: {
                 right: 80,
             },
-            lineSmooth: Chartist.Interpolation.cardinal({
+            //lineSmooth: Chartist.Interpolation.cardinal({
+            //    fillHoles: true,
+            //}),
+            lineSmooth: Chartist.Interpolation.none({
                 fillHoles: true,
             }),
             axisY: {
