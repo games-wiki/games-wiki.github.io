@@ -71,10 +71,11 @@
                 fillHoles: true,
             }),
             axisY: {
-                onlyInteger: true,
                 labelInterpolationFnc: function(value) {
-                    return (value / 1000000) + 'm';
-                }
+                    //return (value / 1000000) + 'm';
+                    return (value / 1000000);
+                },
+                onlyInteger: true,
             },
         };
         new Chartist.Line('#ct-chart-2', data2, conf2);
