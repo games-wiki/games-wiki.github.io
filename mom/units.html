@@ -36,7 +36,7 @@
                 //[/*100+151*/ null, /*105+146*/ null, /*110+141*/ null, /*115+136*/ null, /*120+131*/ null, /*125+126*/ null, /*130+121*/ null, /*135+116*/ null, /*140+111*/ null, /*145+106*/ null, /*150+101*/ null, /*155+96*/ null, /*160+91*/ null, /*165+86*/ null, /*170+81*/ null, /*175+78*/ null],
             ],
         };
-        const conf = {
+        const conf1 = {
             //low: 0,
             fullWidth: true,
             chartPadding: {
@@ -52,7 +52,7 @@
                 onlyInteger: true,
             },
         };
-        new Chartist.Line('#ct-chart-1', data1, conf);
+        new Chartist.Line('#ct-chart-1', data1, conf1);
 
         const data2 = {
             labels:
@@ -62,7 +62,22 @@
                 [/*195.8+58*/ null,      /*185.8+68*/ null,      /*175.8+78*/ null,      /*165.8+88*/ null,      /*155.8+98*/ null],
             ],
         };
-        new Chartist.Line('#ct-chart-2', data2, conf);
+        const conf2 = {
+            fullWidth: true,
+            chartPadding: {
+                right: 80,
+            },
+            lineSmooth: Chartist.Interpolation.none({
+                fillHoles: true,
+            }),
+            axisY: {
+                onlyInteger: true,
+                labelInterpolationFnc: function(value) {
+                    return (value / 1000) + 'k';
+                }
+            },
+        };
+        new Chartist.Line('#ct-chart-2', data2, conf2);
     </script>
 </body>
 </html>
