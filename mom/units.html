@@ -18,8 +18,11 @@
     </style>
 </head>
 <body>
-    <h4>Квилла 37 / Марш 258.500</h4>
-    <div id="ct-chart-1" class="ct-octave"></div>
+    
+    <!-- 1 топливо = 4 сталь = 20 дерево = 20 еда -->
+    
+    <h4>Квилла 37 / Марш 258.500 / Шаг 10%</h4>
+    <div id="ct-chart-37_1" class="ct-octave"></div>
     <table class="table table-sm table-hover">
         <thead>
             <tr>
@@ -103,7 +106,100 @@
             </tr>
         </tbody>
     </table>
-    <!-- 1 топливо = 4 сталь = 20 дерево = 20 еда -->
+    <br><br><br>
+
+    <h4>Квилла 37 / Марш 258.500 / Шаг 5%</h4>
+    <div id="ct-chart-37_2" class="ct-octave"></div>
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>В %</th>
+                <th>В ед</th>
+                <th>Потери</th>
+                <th>Стоимость</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>100+0</td>
+                <td>100% T8 + 0% T9</td>
+                <td>258.500 T8 + 0 T9</td>
+                <td>Ранено</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>90+10</td>
+                <td>90% T8 + 10% T9</td>
+                <td>232.650 T8 + 25.850 T9</td>
+                <td>Ранено</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>80+20</td>
+                <td>80% T8 + 20% T9</td>
+                <td>206.800 T8 + 51.700 T9</td>
+                <td>Ранено 132 T8</td>
+                <td>16,2k / 6,7k / 660 / 126</td>
+            </tr>
+            <tr>
+                <td>70+30</td>
+                <td>70% T8 + 30% T9</td>
+                <td>180.950 T8 + 77.550 T9</td>
+                <td>Ранено 133 T8</td>
+                <td>16,3k / 6,7k / 665 / 127</td>
+            </tr>
+            <tr>
+                <td>60+40</td>
+                <td>60% T8 + 40% T9</td>
+                <td>155.100 T8 + 103.400 T9</td>
+                <td>Ранено 136 T8</td>
+                <td>16,7k / 6,9k / 680 / 130</td>
+            </tr>
+            <tr>
+                <td>50+50</td>
+                <td>50% T8 + 50% T9</td>
+                <td>129.250 T8 + 129.250 T9</td>
+                <td>Ранено</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>40+60</td>
+                <td>40% T8 + 60% T9</td>
+                <td>103.400 T8 + 155.100 T9</td>
+                <td>Ранено</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>30+70</td>
+                <td>30% T8 + 70% T9</td>
+                <td>77.550 T8 + 180.950 T9</td>
+                <td>Ранено</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>20+80</td>
+                <td>20% T8 + 80% T9</td>
+                <td>51.700 T8 + 206.800 T9</td>
+                <td>Ранено</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>0+100</td>
+                <td>0% T8 + 100% T9</td>
+                <td>0 T8 + 258.500 T9</td>
+                <td>Ранено</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+    
+
+
     
     <br><br><br>
     <h4>Осада "Адского Пламени"</h4>
@@ -123,22 +219,18 @@ const data1 = {
 };
 -->
     <script>
-        const data1 = {
+        const data37_1 = {
             labels:
                 ["100+0", "90+10", "80+20", "70+30", "60+40", "50+50", "40+60", "30+70", "20+80", "10+90", "0+100"],
             series:[
                 [/*100+0*/null, /*90+10*/null, /*80+20*/126, /*70+30*/127, /*60+40*/130, /*50+50*/null, /*40+60*/null, /*30+70*/null, /*20+80*/null, /*10+90*/null, /*0+100*/null],
             ],
         };
-        const conf1 = {
-            //low: 0,
+        const conf37_1 = {
             fullWidth: true,
             chartPadding: {
                 right: 80,
             },
-            //lineSmooth: Chartist.Interpolation.cardinal({
-            //    fillHoles: true,
-            //}),
             lineSmooth: Chartist.Interpolation.none({
                 fillHoles: true,
             }),
@@ -146,8 +238,35 @@ const data1 = {
                 onlyInteger: true,
             },
         };
-        new Chartist.Line('#ct-chart-1', data1, conf1);
+        new Chartist.Line('#ct-chart-37_1', data37_1, conf37_1);
 
+        
+        const data37_2 = {
+            labels:
+                ["100+0", "95+5", "90+10", "85+15", "80+20", "70+30", "60+40", "50+50", "40+60", "30+70", "20+80", "10+90", "0+100"],
+            series:[
+                [/*100+0*/null, /*95+5*/null, /*90+10*/null, /*85+15*/null /*80+20*/126, /*70+30*/127, /*60+40*/130, /*50+50*/null, /*40+60*/null, /*30+70*/null, /*20+80*/null, /*10+90*/null, /*0+100*/null],
+            ],
+        };
+        const conf37_2 = {
+            fullWidth: true,
+            chartPadding: {
+                right: 80,
+            },
+            lineSmooth: Chartist.Interpolation.none({
+                fillHoles: true,
+            }),
+            axisY: {
+                onlyInteger: true,
+            },
+        };
+        new Chartist.Line('#ct-chart-37_2', data37_2, conf37_2);
+
+
+
+
+
+        
         const data2 = {
             labels:
                 ["195.8+58", "185.8+68", "175.8+78", "165.8+88", "155.8+98",          "113.8+140", "93.8+160", "73.8+180", "53.8+200", "33.8+220"],
